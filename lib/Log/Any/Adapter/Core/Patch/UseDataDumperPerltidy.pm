@@ -10,13 +10,14 @@ use base qw(Module::Patch);
 
 use Data::Dumper::Perltidy;
 
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 
 our %config;
 
 my $_dump_one_line = sub {
     my ($value) = @_;
 
+    local $Data::Dumper::Terse = 1;
     return Dumper($value);
 };
 
@@ -47,7 +48,7 @@ Log::Any::Adapter::Core::Patch::UseDataDumperPerltidy - Use Data::Dumper::Perlti
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 

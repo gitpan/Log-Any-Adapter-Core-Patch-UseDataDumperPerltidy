@@ -1,6 +1,6 @@
 package Log::Any::PT;
 use Log::Any::Adapter::Core::Patch::UseDataDumperPerltidy;
-our $VERSION = '0.01'; # VERSION
+our $VERSION = '0.02'; # VERSION
 1;
 # ABSTRACT: Shortcut for Log::Any::Adapter::Core::Patch::UseDataDumperPerltidy
 
@@ -13,7 +13,7 @@ Log::Any::PT - Shortcut for Log::Any::Adapter::Core::Patch::UseDataDumperPerltid
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 AUTHOR
 
