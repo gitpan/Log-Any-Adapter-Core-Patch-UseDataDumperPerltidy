@@ -1,0 +1,38 @@
+NAME
+    Log::Any::Adapter::Core::Patch::UseDataDumperPerltidy - Use
+    Data::Dumper::Perltidy
+
+VERSION
+    version 0.01
+
+SYNOPSIS
+     use Log::Any '$log';
+     use Log::Any::PT; # shortcut for Log::Any::Adapter::Core::Patch::UseDataDumperPerltidy;
+
+     $log->debug("See this data structure: %s", $some_data);
+
+DESCRIPTION
+    Log::Any dumps data structures using Data::Dumper with settings:
+    Indent=0. This is rather hard to read. This patch replaces dumping with
+    using Data::Dumper::Perltidy which has nicer output.
+
+    But note that Data::Dumper::Perltidy is rather slow (about 500x slower
+    than Data::Dumper and 50x slower than Data::Dump) and has heavier
+    startup time (about 0.1s, 37K lines). IMO it has the nicest output
+    though.
+
+FAQ
+SEE ALSO
+    Log::Any::Adapter::Core::Patch::SetDumperIndent
+
+    Log::Any::Adapter::Core::Patch::UseDataDump
+
+AUTHOR
+    Steven Haryanto <stevenharyanto@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2012 by Steven Haryanto.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
